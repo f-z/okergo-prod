@@ -22,7 +22,8 @@ RUN wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | apt-key ad
 
 # Install requirements file
 ADD requirements.txt /
-RUN pip install --upgrade pip && pip install -r requirements.txt --find-links ./
+ADD Okergo-0.22-py3-none-any.whl /
+RUN pip install --upgrade pip && pip install Okergo-0.22-py3-none-any.whl && pip install -r requirements.txt
 
 # Make current directory available as "Misago" within docker
 ADD . /misago
