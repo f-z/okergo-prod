@@ -203,14 +203,33 @@ Need help?
 If you have problems setting up your site using `misago_docker`, feel free to ask on [our forums](https://misago-project.org/) or [Discord Chat](https://discord.gg/fwvrZgB). Please don't use Github issues!
 
 
-Contributing
-------------
+Deployment instructions
+----------------
 
-If you've found a bug, issue, or place for improvement, please open an issue or pull request.
-
-
-Copyright and license
----------------------
-
-This is free software and you are welcome to modify and redistribute it under the conditions described in the license.
-For the complete license, refer to LICENSE.
+After creating and setting up the droplet on Digital Ocean, run the following commands:
+```
+ssh root@167.71.129.238
+apt-get update
+apt-get upgrade
+apt-get dist-upgrade
+do-release-upgrade
+apt-get install fail2ban
+```
+Then on the development machine:
+```
+ssh-keygen -R 167.71.129.238
+ssh-copy-id root@167.71.129.238
+```
+Then back inside the server:
+```
+ssh-keygen -t rsa -b 4096 -C "fil.zofakis@gmail.com"
+cat ~/.ssh/id_rsa.pub
+```
+Add the SSH key to GitHub.
+Then you can clone from the production repository.
+```
+git clone git@github.com:f-z/okergo-docker.git
+cd okergo-docker/
+./appctl setup
+```
+Finally, set up Gmail application password [here](https://security.google.com/settings/security/apppasswords)
