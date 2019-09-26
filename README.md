@@ -207,6 +207,9 @@ Deployment instructions
 ----------------
 
 After creating and setting up the droplet on Digital Ocean, run the following commands:
+In okergo-dev folder:
+``./dev pushprod``
+In terminal:
 ```
 ssh root@167.71.129.238
 apt-get update
@@ -226,10 +229,10 @@ ssh-keygen -t rsa -b 4096 -C "fil.zofakis@gmail.com"
 cat ~/.ssh/id_rsa.pub
 ```
 Add the SSH key to GitHub.
-Then you can clone from the production repository.
+Then you can clone from the production repository:
 ```
 git clone git@github.com:f-z/okergo-docker.git
 cd okergo-docker/
 ./appctl setup
 ```
-Finally, set up Gmail application password [here](https://security.google.com/settings/security/apppasswords)
+Finally, set up Gmail application password [here](https://security.google.com/settings/security/apppasswords) when prompted.
