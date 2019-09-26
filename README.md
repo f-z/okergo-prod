@@ -236,3 +236,19 @@ cd okergo-docker/
 ./appctl setup
 ```
 Finally, set up Gmail application password [here](https://security.google.com/settings/security/apppasswords) when prompted.
+
+
+Manual update instructions
+----------------
+
+To update a live deployment manually do the following:
+```
+docker-compose stop
+./appctl backup
+git pull
+docker-compose build
+docker-compose run --rm misago python manage.py collectstatic
+docker-compose run --rm misago python manage.py makemigrations
+docker-compose run --rm misago python manage.py migrate
+docker-compose up -d
+```
