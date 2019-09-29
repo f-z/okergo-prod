@@ -243,6 +243,7 @@ INSTALLED_APPS = [
     "misago.socialauth",
     "misago.graphql",
     "misago.faker",
+    "misago.menus",
     "misago.sso",
 ]
 
@@ -356,6 +357,7 @@ TEMPLATES = [
                 "misago.themes.context_processors.theme",
                 "misago.legal.context_processors.legal_links",
                 "misago.users.context_processors.user_links",
+                "misago.menus.context_processors.menus",
 
                 # Data preloaders
                 "misago.conf.context_processors.preload_settings_json",
@@ -541,3 +543,10 @@ MISAGO_PROFILE_FIELDS = [
 # Display threads instead of categories on forum index?
 
 MISAGO_THREADS_ON_INDEX = os.environ.get('MISAGO_INDEX', "threads") == "threads"
+
+
+# Import settings override
+try:
+    from .settings_override import *
+except ImportError:
+    pass

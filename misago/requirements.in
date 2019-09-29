@@ -1,4 +1,4 @@
-okergo==0.22
+okergo==0.23
 django-anymail
 django-redis
 sentry-sdk
