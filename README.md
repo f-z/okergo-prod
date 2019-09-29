@@ -287,7 +287,18 @@ To update a live deployment manually run the following commands:
 ```
 docker-compose stop
 ./appctl backup
+```
+Then try:
+```
 git pull
+```
+Otherwise:
+```
+git fetch --all
+git reset --hard origin/master
+```
+Finally:
+```
 docker-compose build
 docker-compose run --rm misago python manage.py collectstatic
 docker-compose run --rm misago python manage.py makemigrations
