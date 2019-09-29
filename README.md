@@ -271,10 +271,19 @@ cd okergo-docker/
 Finally, set up Gmail application password [here](https://security.google.com/settings/security/apppasswords) when prompted.
 
 
+Automatic update instructions
+----------------
+
+To update a live deployment automatically run the following command:
+```
+./appctl upgrade
+```
+
+
 Manual update instructions
 ----------------
 
-To update a live deployment manually do the following:
+To update a live deployment manually run the following commands:
 ```
 docker-compose stop
 ./appctl backup
