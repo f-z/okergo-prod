@@ -515,23 +515,29 @@ MISAGO_AVATAR_GALLERY = os.path.join(BASE_DIR, 'avatargallery')
 
 MISAGO_PROFILE_FIELDS = [
     {
-        "name": _("Personal"),
+        "name": "Προσωπικά",
         "fields": [
             "misago.users.profilefields.default.RealNameField",
             "misago.users.profilefields.default.BioField",
             "misago.users.profilefields.default.RegionField",
+        ],
+    },
+    {
+        "name": "Επαγγελματικά",
+        "fields": [
+            "misago.users.profilefields.default.SpecializationField",
             "misago.users.profilefields.default.RegistryNumberField",
         ],
     },
     {
-        "name": _("Contact"),
+        "name": "Επικοινωνίας",
         "fields": [
             "misago.users.profilefields.default.PhoneField",
             "misago.users.profilefields.default.WebsiteField",
         ],
     },
     {
-        "name": _("IP address"),
+        "name": "Διεύθυνση IP",
         "fields": ["misago.users.profilefields.default.JoinIpField"],
     },
 ]
