@@ -35,7 +35,7 @@ urlpatterns = urlpatterns_override + [
     url(r'^', include('misago.urls', namespace='misago')),
 
     # Homepage with instructions
-    url(r"^instructions/", TemplateView.as_view(template_name="misago/instructions.html")),
+    url(r"^instructions/", TemplateView.as_view(template_name="instructions.html")),
 
     # django-simple-sso doesn't have namespaces, we can't use namespace here
     url(r"^sso/", include("misago.sso.urls")),
