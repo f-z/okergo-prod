@@ -19,7 +19,6 @@ from django.conf.urls.static import static
 from django.utils import timezone
 from django.views.decorators.cache import cache_page
 from django.views.decorators.http import last_modified
-from django.views.generic import TemplateView
 from django.views.i18n import JavaScriptCatalog
 
 
@@ -33,9 +32,6 @@ except ImportError:
 # Add standard URL's
 urlpatterns = urlpatterns_override + [
     url(r'^', include('misago.urls', namespace='misago')),
-
-    # Homepage with instructions
-    url(r"^instructions/", TemplateView.as_view(template_name="instructions.html")),
 
     # django-simple-sso doesn't have namespaces, we can't use namespace here
     url(r"^sso/", include("misago.sso.urls")),
