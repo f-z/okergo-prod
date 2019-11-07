@@ -544,8 +544,9 @@ MISAGO_PROFILE_FIELDS = [
 
 
 # Display threads instead of categories on forum index?
-
+MISAGO_CATEGORIES_ON_INDEX = os.environ.get('MISAGO_INDEX', "categories") == "categories"
 MISAGO_THREADS_ON_INDEX = os.environ.get('MISAGO_INDEX', "threads") == "threads"
+MISAGO_USERS_ON_INDEX = os.environ.get('MISAGO_INDEX', "users") == "users"
 
 
 # Import settings override
