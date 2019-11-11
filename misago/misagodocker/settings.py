@@ -519,7 +519,6 @@ MISAGO_PROFILE_FIELDS = [
         "fields": [
             "misago.users.profilefields.default.RealNameField",
             "misago.users.profilefields.default.BioField",
-            "misago.users.profilefields.default.RegionField",
         ],
     },
     {
@@ -532,6 +531,8 @@ MISAGO_PROFILE_FIELDS = [
     {
         "name": "Επικοινωνίας",
         "fields": [
+            "misago.users.profilefields.default.RegionField",
+            "misago.users.profilefields.default.AddressField",
             "misago.users.profilefields.default.PhoneField",
             "misago.users.profilefields.default.WebsiteField",
         ],
